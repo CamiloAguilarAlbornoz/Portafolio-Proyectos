@@ -1,0 +1,29 @@
+<div id="idDivBox">
+    <!----- Cargar formulario de contacto --->
+    <h2>Contacto</h2>
+    <form id="idFormContact" action="" method="post">
+        <label for="lblName">Nombre</label>
+        <input type="text" name="lblName" data-validation="alphanumeric"/>
+
+        <label for="lblLastNames">Apellidos</label>
+        <input type="text" name="lblLastNames" data-validation="alphanumeric"/>
+
+        <label for="lblEmail">Email</label>
+        <input type="text" name="lblEmail" data-validation="email"/>
+
+        <label for="lblGender">Sexo</label>
+        <select name="lblGender" data-validation="required">
+            <option value="Male">Masculino</option>
+            <option value="Female">Femenino</option>
+        </select>
+
+        <label for="lblBirthDate">Fecha de nacimiento</label>
+        <input type="text" name="lblBirthDate" data-validation="date" 
+        data-validation-format="dd-mm-yyyy"/>
+
+        <label for="lblAge">Edad</label>
+        <input type="number" name="lblAge" data-validation="number"/>
+
+        <input type="submit" value="Enviar"/>
+    </form>
+</div>

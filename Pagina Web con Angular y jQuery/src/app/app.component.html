@@ -1,0 +1,121 @@
+<!---- Botones para cambiar colores ----->
+<div id="idDivSelectorTheme">
+  <div id="idDivToGreen"></div>
+  <div id="idDivToBlue"></div>
+  <div id="idDivToRed"></div>
+</div>
+<!----- La caja blanca que contiene la pagina-->
+<section id="idSectionGlobal">
+  <!----- Cabecera de la página ------->
+  <header>
+    <div id="idDivLogo">
+      <h1>Proyecto JS</h1>
+    </div>
+    <!---- Arregla los flotantes -->
+    <div class="classDivClearFix"></div>
+    <!----- Menu de navegación ----->
+    <nav id="idUlMenu">
+      <ul>
+        <li>
+          <a [routerLink]="['home']" [routerLinkActive]="['classAActivate']">
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['clock']" [routerLinkActive]="['classAActivate']">
+            Reloj
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['about']" [routerLinkActive]="['classAActivate']">
+            Sobre mi
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['contact']" [routerLinkActive]="['classAActivate']">
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="idSectionContent">
+    <!---- CARGA DE COMPONENTES -->
+    <router-outlet></router-outlet>
+    <!---- ASIDEBAR -->
+    <aside id="idAsidebar">
+      <ng-container *ngIf="!inSesion; else elseTemplate">
+
+        <div id="idDivAbout">
+          <h4>
+            <span>¿Quien soy?</span>
+          </h4>
+          <img src="../assets/images/caracol.jpg" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id felis nisi. Mauris et erat vel
+            tortor porta auctor in a turpis.
+          </p>
+        </div>
+        <div id="idDivLogin">
+          <h4>
+            <span>Identificate</span>
+          </h4>
+          <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+            <!--======================NOMBRE=========================-->
+            <label for="inputName">
+              Nombre
+            </label>
+            <input type="text" name="inputName" #inputName="ngModel" [(ngModel)]="person.name" required
+              pattern="[a-zA-Z]+" />
+
+            <span *ngIf="inputName.touched && !inputName.valid">
+              El Nombre no es valido
+            </span>
+
+            <!--======================EMAIL=========================-->
+            <label for="inputEmail">
+              Correo
+            </label>
+            <input type="email" name="inputEmail" #inputEmail="ngModel" [(ngModel)]="person.email" required />
+
+            <span *ngIf="inputEmail.touched && !inputEmail.valid">
+              El Email no es valido
+            </span>
+
+            <!--======================CONTRASEÑA=========================-->
+            <label for="inputPassword">
+              Contraseña
+            </label>
+            <input type="password" name="inputPassword" #inputPassword="ngModel" [(ngModel)]="person.password"
+              required />
+
+            <span *ngIf="inputPassword.touched && !inputPassword.valid">
+              La Contraseña no es valida
+            </span>
+
+            <!--======================SUBMIT=========================-->
+            <input type="submit" value="Entrar" [disabled]="!formLogin.form.valid" />
+          </form>
+        </div>
+
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div id="idDivAbout">
+          <h4>
+            <span>¿Quien soy?</span>
+          </h4>
+          <img src="../assets/images/caracol.jpg" />
+          <br/>
+          <strong>Bienvenido {{personName}}</strong>
+          <a href="#" (click)="closeSesion()">Cerrar sesión</a>
+        </div>
+      </ng-template>
+    </aside>
+    <div class="classDivClearFix"></div>
+  </section>
+</section>
+<!------ Footer -->
+<footer>
+  Master de JavaScript de Victor Robles &copy;
+  <a (click)="goUp()" class="classAUp">Ir arriba</a>
+</footer>

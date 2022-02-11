@@ -1,0 +1,43 @@
+/*Div con todos los Posts*/
+#idDivPosts {
+    /*Porcentaje del contenedor*/
+    width: 60%;
+    float: left;
+    font-family: Helvetica, Arial;
+}
+
+/*Estilos de los artículos*/
+.classArticlePost {
+    padding: 7px;
+}
+
+/*Fecha de los post*/
+.classArticlePost .classSpanDate {
+    display: block;
+    color: gray;
+    margin-top: 5px;
+}
+
+/*Parrafo del post*/
+.classArticlePost p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    text-align: justify;
+}
+
+/*Botón de leer más del post*/
+.classAReadMore {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    width: 70px;
+    float: auto;
+    margin-bottom: 20px;
+    /*CAMBIAR*/
+    background: #235E3D;
+}

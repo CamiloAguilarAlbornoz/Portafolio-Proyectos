@@ -1,0 +1,23 @@
+<!----- Slider ------>
+<div id="idDivSlider">
+    <div class="classBxslider">
+        <div>
+            <img src="../../../assets/images/hojas.jpg" title="Hojas">
+        </div>
+        <div>
+            <img src="../../../assets/images/rojo.jpg" title="The long and winding road">
+        </div>
+        <div>
+            <img src="../../../assets/images/cielo.jpg" title="Happy trees">
+        </div>
+    </div>
+</div>
+<!----- Contenedor de artículos ----->
+<div id="idDivPosts">
+    <article class="classArticlePost" *ngFor="let post of postsList">
+        <h2>{{post.titlePost}}</h2>
+        <span class="classSpanDate">{{post.datePost}}</span>
+        <p>{{post.content}}</p>
+        <a href="#" class="classAReadMore">Leer más</a>
+    </article>
+</div>

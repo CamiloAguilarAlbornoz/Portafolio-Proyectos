@@ -1,0 +1,11 @@
+#idFormContact {
+    width: 50%;
+    margin-top: 15px;
+    font-family: Helvetica, Arial;
+}
+
+#idFormContact label {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
