@@ -14,6 +14,9 @@ export class AppComponent {
   private formNameToShow : any;
   public personName : string;
 
+  public color : string = '#235E3D';
+  public hover : boolean = false;
+
   constructor() {
     this.inSesion = false;
     this.personName = '';
